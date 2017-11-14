@@ -38,6 +38,8 @@ total_p10_sent <- sum(sentencing_data[sentencing_data$year == p_10 & sentencing_
 # Sentencing Report
 In `r latest_year` there were `r total_latest_appear` defendants who appeared at court of which `r total_latest_sent` were sentenced (`r per(total_latest_sent, total_latest_appear)`%). The number of defendants sentenced has changed by `r per(total_latest_sent, total_p10_sent) - 100`% from 10 years ago when the number of defendants sentenced was `r total_p10_sent`.
 
+Here is an new sentence I am adding to the report.
+
 ```{r, echo=FALSE}
 year_data <- sentencing_data %>% group_by(year) %>% summarise(count = sum(count))
 ggplot(data=year_data, aes(x=year, y=count)) + geom_line() + geom_point() + expand_limits(y = 0) + theme_bw()
