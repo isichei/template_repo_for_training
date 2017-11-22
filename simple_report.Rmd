@@ -30,13 +30,13 @@ p_10 <- latest_year - 10
 # Get some headline values
 total_latest_appear <- sum(sentencing_data[sentencing_data$year == latest_year, 'count'])
 total_latest_sent <- sum(sentencing_data[sentencing_data$year == latest_year & sentencing_data$sentenced == 1, 'count'])
-total_p10_appear <- sum(sentencing_data[sentencing_data$year == p_10, 'count'])
-total_p10_sent <- sum(sentencing_data[sentencing_data$year == p_10 & sentencing_data$sentenced == 1, 'count'])
+total_p10_appear <- sum(sentencing_data[sentencing_data$year == p_5, 'count'])
+total_p10_sent <- sum(sentencing_data[sentencing_data$year == p_5 & sentencing_data$sentenced == 1, 'count'])
 
 ```
 
 # Sentencing Report
-In `r latest_year` there were `r total_latest_appear` defendants who appeared at court of which `r total_latest_sent` were sentenced (`r per(total_latest_sent, total_latest_appear)`%). The number of defendants sentenced has changed by `r per(total_latest_sent, total_p10_sent) - 100`% from 10 years ago when the number of defendants sentenced was `r total_p10_sent`.
+In `r latest_year` there were `r total_latest_appear` defendants who appeared at court of which `r total_latest_sent` were sentenced (`r per(total_latest_sent, total_latest_appear)`%). The number of defendants sentenced has changed by `r per(total_latest_sent, total_p10_sent) - 100`% from 5 years ago when the number of defendants sentenced was `r total_p10_sent`.
 
 I am a robot.
 
